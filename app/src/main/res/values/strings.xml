@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">GitHubSearchMVVM</string>
+    <string name="app_name">RatesP2P</string>
 
     <string name="search_hint">Введите поисковый запрос</string>
+    <string name="amount_hint">Введите сумму для обмена</string>
     <string name="repository_details_title">Детали репозитория</string>
+    <string name="buy">BUY</string>
+    <string name="sell">SELL</string>
 </resources>
