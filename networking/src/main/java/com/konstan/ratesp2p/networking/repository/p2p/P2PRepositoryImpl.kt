@@ -1,11 +1,10 @@
 package com.konstan.ratesp2p.networking.repository.p2p
 
-import com.konstan.ratesp2p.networking.NetworkService
 import com.konstan.ratesp2p.networking.models.p2p.*
 import javax.inject.Inject
 
 class P2PRepositoryImpl @Inject constructor(
-    private val networkService: NetworkService
+    private val networkService: P2PService
 ): P2PRepository {
 
     override suspend fun getRates(amount: Float?, fiatToBuy: Fiat, fiatToSell: Fiat): Rate? {

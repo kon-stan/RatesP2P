@@ -37,13 +37,14 @@
                 android:text="@={viewModel.amount}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <LinearLayout
             android:id="@+id/rates_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:baselineAligned="false"
-            android:visibility="@{viewModel.rate != null}"
+            android:baselineAligned="true"
+            android:visibility="@{viewModel.rate != null &amp;&amp; viewModel.errorText == null}"
         >
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,7 +154,62 @@
                     tools:text="6000 USDT"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/rates_layout"
+            android:visibility="@{viewModel.rate != null &amp;&amp; viewModel.fiatCurrency != null}">
+
+
+            <TextView
+                android:id="@+id/text_fiat_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/thb"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Приблизительное количество THB"/>
+
+            <TextView
+                android:id="@+id/text_thb_currency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{Float.toString(viewModel.fiatCurrency) + ' ' + viewModel.fiat}"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/text_fiat_info"
+                tools:text="100000 THB"/>
+
+
+            <TextView
+                android:id="@+id/text_rub_currency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{Float.toString(viewModel.rubCurrency )}"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/text_thb_currency"
+                tools:text="2.3 RUB"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
         <TextView

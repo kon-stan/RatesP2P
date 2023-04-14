@@ -5,7 +5,7 @@ enum class Assets {
 }
 
 enum class Fiat {
-    KZT, RUB
+    KZT, RUB, THB
 }
 
 enum class TradeType {

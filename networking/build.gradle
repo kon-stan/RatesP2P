@@ -42,6 +42,7 @@ dependencies {
 
     api "com.squareup.okhttp3:okhttp:$okhttp_version"
     api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    api 'com.squareup.retrofit2:converter-simplexml:2.3.0'
 
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"

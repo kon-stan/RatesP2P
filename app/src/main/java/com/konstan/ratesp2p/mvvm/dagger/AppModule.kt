@@ -7,6 +7,7 @@ import com.konstan.ratesp2p.core.utils.ViewModelFactory
 import com.konstan.ratesp2p.mvvm.App
 import dagger.Binds
 import dagger.Module
+import javax.inject.Qualifier
 
 @Module
 interface AppModule {
